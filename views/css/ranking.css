@@ -36,16 +36,19 @@
     gap: 8px;
     color: var(--malachite);
     font-size: 14px;
-    font-weight: 700;
+    font-weight: bold;
 }
 
 .ranking-etiqueta {
-    padding: 8px 14px;
-    margin-bottom: 22px;
+    background: var(--gradienteVerde);
+    display: inline-block;
+    font-size: 15px;
     color: white;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.1);
+    padding: 6px 25px;
+    border-radius: 40px;
+    text-decoration: none;
+    position: relative;
+    bottom: 30px;
 }
 
 .ranking-hero h2 {
@@ -53,7 +56,7 @@
     margin-bottom: 20px;
     color: white;
     font-size: clamp(44px, 7vw, 82px);
-    font-weight: 800;
+    font-weight: bold;
     line-height: 1.05;
 }
 
@@ -126,7 +129,7 @@
     margin: 6px 0 0;
     color: #10271a;
     font-size: clamp(30px, 4vw, 46px);
-    font-weight: 800;
+    font-weight: bold;
 }
 
 .secao-cabecalho > img {
@@ -174,7 +177,7 @@
     color: white;
     border-radius: 50%;
     background: var(--darkEmerald);
-    font-weight: 800;
+    font-weight: bold;
 }
 
 .podio-coroa {
@@ -210,7 +213,7 @@
     margin: 0 0 6px;
     color: #10271a;
     font-size: 21px;
-    font-weight: 800;
+    font-weight: bold;
 }
 
 .podio-card p {
@@ -293,7 +296,7 @@
     color: rgba(255, 255, 255, 0.76);
     background: var(--darkEmerald);
     font-size: 13px;
-    font-weight: 700;
+    font-weight: bold;
 }
 
 .ranking-linha {
@@ -319,7 +322,7 @@
     color: var(--darkEmerald);
     border-radius: 50%;
     background: #e6f4e9;
-    font-weight: 800;
+    font-weight: bold;
 }
 
 .ranking-linha:nth-child(-n + 3) .ranking-numero {
@@ -363,7 +366,7 @@
 .ranking-pontos {
     color: var(--darkEmerald);
     font-size: 17px;
-    font-weight: 800;
+    font-weight: bold;
 }
 
 .ranking-contagem {

@@ -11,7 +11,7 @@ $doacoesAtivo = in_array($paginaAtual, [
 ?>
 <header>
     <div class="logo">
-        <a href="#"><img src="../img/ReciclaTech 1.png" alt="logo"></a>
+        <a href="index.php"><img src="../img/ReciclaTech 1.png" alt="logo"></a>
         <h1 style="color: white;">ReciclaTech</h1>
     </div>
     <button class="menu-mobile-toggle" type="button" onclick="alternarMenuMobile()" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">

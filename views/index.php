@@ -332,7 +332,7 @@ $homeRanking = $pdo->query("SELECT u.name, u.points, COUNT(d.id) AS donations_to
             </div>
         </div>
         <figure>
-            <img src="../img/section-img.png" alt="">
+            <img src="../img/img-section-beneficios.png" alt="Imagem Benefícios para todos">
         </figure>
     </section>
     <section class="sobre">

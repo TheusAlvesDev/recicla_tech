@@ -2,98 +2,101 @@
 // Garante que o config.php seja carregado e a sessão iniciada
 require 'config.php';
 
-// 1. Redireciona para Index se JÁ estiver logado
+// Redireciona para Index se JÁ estiver logado
 if (isset($_SESSION['user_id'])) {
     header("Location: index.php");
     exit;
 }
 
-// Mensagens de erro ou sucesso (tratamento básico de URL params)
+// Mensagens de erro ou sucesso
 $msg = '';
 if (isset($_GET['error'])) {
     $msg = '<div class="alert alert-danger">Credenciais inválidas ou conta não existe.</div>';
 } elseif (isset($_GET['success']) && $_GET['success'] == 'registered') {
     $msg = '<div class="alert alert-success">Cadastro realizado com sucesso! Faça login.</div>';
 }
-
-// Se o usuário já estiver logado, redireciona para a página inicial
-if (isset($_SESSION['user_id'])) {
-    header("Location: index.php");
-    exit;
-}
 ?>
+<!DOCTYPE html>
+<html lang="pt-BR">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ReciclaTech</title>
+    <title>ReciclaTech - Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <link rel="stylesheet" href="css/styleslogin.css">
-
-
 </head>
 
-<br><br><br>
-
-
-<div class="container-login">
-
-    <div class="cartao-login">
-
-        <div class="imagem-login">
-            <img src="img/image-left.png" alt="ReciclaTech">
-        </div>
-
-        <div class="formulario-login">
-
-            <div class="logo-pequena">
-                <img src="img/ReciclaTech.png" alt="Logo">
-                <span>ReciclaTech</span>
+<body>
+    <div class="container-login">
+        <main class="cartao-login">
+            <div class="imagem-login">
+                <img src="img/image-left.png" alt="ReciclaTech">
             </div>
 
-            <h2>Bem vindo(a) de volta!</h2>
-
-            <?= $msg ?>
-
-            <form action="login_action.php" method="POST">
-
-                <div class="grupo-campo">
-                    <label>Email</label>
-                    <input type="email" name="email" placeholder="Digite seu email" required>
+            <div class="formulario-login">
+                <div class="logo-pequena">
+                    <img src="img/ReciclaTech.png" alt="Logo" class="logo">
+                    <span>ReciclaTech</span>
                 </div>
 
-                <div class="grupo-campo">
-                    <label>Senha</label>
-                    <input type="password" name="senha" placeholder="Digite sua senha" required>
-                </div>
+                <h2>Bem vindo(a) de volta!</h2>
 
-                <div class="opcoes-login">
+                <?= $msg ?>
 
-                    <label class="lembrar-login">
-                        <input type="checkbox">
-                        Lembre de mim
-                    </label>
+                <form action="login_action.php" method="POST">
+                    <div class="grupo-campo">
+                        <label>Email</label>
+                        <input type="email" name="email" placeholder="Digite seu email" required>
+                    </div>
 
-                    <a href="" class="esqueci-senha">
-                        Esqueceu sua senha?
-                    </a>
+                    <div class="grupo-campo">
+                        <label>Senha</label>
+                        <div class="campo-senha">
+                            <input id="senha" type="password" name="senha" placeholder="Digite sua senha" required>
+                            <button type="button" class="btn-olho" onclick="clicado(this)">
+                                <img id="olhoImg" src="img/olhinho.png" alt="Mostrar senha">
+                            </button>
+                        </div>
+                    </div>
 
-                </div>
+                    <div class="opcoes-login">
+                        <label class="lembrar-login">
+                            <input type="checkbox">
+                            Lembre de mim
+                        </label>
+                        <a href="" class="esqueci-senha">
+                            Esqueceu sua senha?
+                        </a>
+                    </div>
 
-                <button type="submit" class="botao-login">
-                    Log in
-                </button>
+                    <button type="submit" class="botao-login">
+                        Log in
+                    </button>
+                </form>
 
-            </form>
-
-            <p class="link-cadastro">
-                Não tem uma conta?
-                <a href="register.php">Se cadastre</a>
-            </p>
-
-        </div>
-
+                <p class="link-cadastro">
+                    Não tem uma conta?
+                    <a href="register.php">Se cadastre</a>
+                </p>
+            </div>
+        </main>
     </div>
 
-</div>
+    <script>
+        function clicado(botao) {
+            const senha = document.getElementById("senha");
+            const olhoImg = botao.querySelector('img');
+
+            if (senha.type === 'password') {
+                senha.type = 'text';
+                olhoImg.src = 'img/olhinhoFechado.png';
+            } else {
+                senha.type = 'password';
+                olhoImg.src = 'img/olhinho.png';
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -250,39 +250,3 @@ input::-ms-reveal,
 input::-ms-clear {
     display: none;
 }
-
-@media (max-width: 760px) {
-    body {
-        min-height: 100dvh;
-        padding: 16px;
-        align-items: flex-start;
-    }
-
-    .container-login { min-height: calc(100dvh - 32px); }
-
-    .cartao-login {
-        width: 100%;
-        max-width: 520px;
-        height: auto;
-        min-height: 0;
-        padding: clamp(18px, 6vw, 28px);
-        border-radius: 20px;
-    }
-
-    .imagem-login { display: none; }
-
-    .formulario-login {
-        width: 100%;
-        height: auto;
-        padding: 0;
-    }
-}
-
-@media (max-width: 420px) {
-    body { padding: 10px; }
-    .container-login { min-height: calc(100dvh - 20px); }
-    .cartao-login { padding: 22px 18px; }
-    .formulario-login h2 { margin-bottom: 24px; font-size: 22px; }
-    .grupo-campo { margin-bottom: 20px; }
-    .opcoes-login { align-items: flex-start; flex-direction: column; gap: 12px; }
-}
