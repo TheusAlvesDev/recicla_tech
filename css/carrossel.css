@@ -1,0 +1,222 @@
+.imagem-card-container{
+    width: 90%;
+    height: 50%;
+    border-radius: 20px;
+    background-color: rgb(223, 223, 223);
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+
+    .img_infor{
+    height: 100%;
+    object-fit: cover;
+}
+}
+
+.card{
+    width:20rem;
+    height: 30rem;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.titulo-doacoes{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+    margin: 3%;
+}
+.titulo-doacoes a{
+    text-decoration: none;
+    color: black;
+}
+.titulo-doacoes h1{
+    color: black;
+}
+.fundo-cards{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+ /* Ajuste conforme o tamanho do seu layout */
+    margin: 0 auto;
+    background: linear-gradient(
+        to right,
+        transparent 0%,
+        #3BB44B 10%,
+        #3BB44B 90%,
+        transparent 100%
+    );
+    padding: 30px;
+}
+
+.fundo-cards-vazio {
+    min-height: 520px;
+    padding: 30px clamp(20px, 4vw, 64px);
+}
+
+.doacoes-skeleton {
+    display: grid;
+    width: 100%;
+    max-width: 1080px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.skeleton-card {
+    position: relative;
+    display: flex;
+    min-width: 0;
+    height: 450px;
+    padding: 20px;
+    overflow: hidden;
+    flex-direction: column;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 14px 32px rgba(0, 35, 16, 0.12);
+}
+
+.skeleton-bloco {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #dce7de;
+}
+
+.skeleton-bloco::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(100deg, transparent 20%, rgba(255, 255, 255, 0.85) 50%, transparent 80%);
+    transform: translateX(-100%);
+    animation: skeleton-carregando 1.45s ease-in-out infinite;
+}
+
+.skeleton-card:nth-child(2) .skeleton-bloco::after { animation-delay: .12s; }
+.skeleton-card:nth-child(3) .skeleton-bloco::after { animation-delay: .24s; }
+
+.skeleton-imagem {
+    width: 100%;
+    height: 210px;
+    flex: 0 0 210px;
+    border-radius: 15px;
+}
+
+.skeleton-conteudo {
+    padding: 22px 2px 0;
+}
+
+.skeleton-titulo { width: 68%; height: 22px; margin-bottom: 18px; }
+.skeleton-texto { width: 100%; height: 13px; margin-bottom: 10px; }
+.skeleton-texto-curto { width: 78%; }
+.skeleton-rodape { display: flex; margin-top: auto; align-items: center; justify-content: space-between; gap: 16px; }
+.skeleton-local { width: 42%; height: 14px; }
+.skeleton-botao { width: 118px; height: 40px; border-radius: 999px; }
+
+@keyframes skeleton-carregando {
+    100% { transform: translateX(100%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .skeleton-bloco::after { animation: none; }
+}
+
+
+
+.botao-card{
+    padding: 8px 25px;
+    background-color: var(--malachite);
+    text-decoration: none;
+    color: white;
+    border-radius:40px;
+    min-width: 7.4rem;
+    
+}
+.botao-transicao{
+    transition: transform 0.2s ease;
+}
+.botao-transicao:hover{
+    transform: scale(1.05);
+}
+.rodape-card{
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: 10px;
+}
+.rodape-card p{
+margin: 0;
+}
+.descricao-doacao{
+    align-self: self-start;
+    padding: 20px;
+}
+
+
+.imagem-doacao{
+    width: 100%; 
+    object-fit: cover;
+}
+
+
+.carrossel-container {
+    overflow: hidden; 
+    width: 100%;
+}
+
+/* A esteira onde os cards ficam enfileirados */
+.carrossel-track {
+    display: flex;
+    gap: 20px; /* Espaçamento entre um card e outro */
+    transition: transform 0.4s ease-in-out; /* Animação suave de deslizar */
+}
+
+/* Adaptando a largura do seu card para caberem 3 por vez (exemplo) */
+.carrossel-track .card {
+    min-width: 20rem; /* Garante que o card não esmague muito em telas pequenas */
+}
+
+/* Estilo básico das setas */
+.carrossel-seta {
+    background-color: var(--darkEmerald);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 43px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.carrossel-seta:hover {
+    background-color: var(--jadeGreen);/* Um azul mais escuro no hover */
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .titulo-doacoes { margin: 0 16px 20px; align-items: flex-start; gap: 10px; }
+    .titulo-doacoes h1 { font-size: clamp(28px, 8vw, 40px); }
+    .titulo-doacoes a { white-space: nowrap; }
+    .fundo-cards { padding: 24px 8px; gap: 6px; }
+    .carrossel-seta { width: 36px; height: 36px; flex: 0 0 36px; }
+    .carrossel-track { gap: 14px; }
+    .carrossel-track .card { min-width: min(82vw, 20rem); }
+    .doacoes-skeleton { grid-template-columns: 1fr; max-width: 340px; }
+    .skeleton-card:nth-child(n + 2) { display: none; }
+}
+
+@media (max-width: 420px) {
+    .titulo-doacoes { align-items: flex-start; flex-direction: column; }
+    .fundo-cards { padding-inline: 2px; }
+    .carrossel-seta { width: 32px; height: 32px; flex-basis: 32px; }
+    .carrossel-track .card { min-width: calc(100vw - 92px); }
+    .rodape-card { width: calc(100% - 24px); gap: 10px; }
+    .botao-card { min-width: auto; padding-inline: 18px; }
+}

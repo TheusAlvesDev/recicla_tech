@@ -1,0 +1,13 @@
+.sobre{
+    background-color: var(--pearlAqua);
+    color: black;
+    padding: 6rem;
+}
+.carrossel-wrapper{
+    display: flex;
+    align-items: center;
+    padding-block: 2rem;
+    .carrossel-track{
+        padding: 1rem;
+    }    
+}

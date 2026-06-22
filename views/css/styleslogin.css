@@ -1,0 +1,288 @@
+:root {
+    --darkEmerald: #026939;
+    --jadeGreen: #3BB44B;
+    --verdeMenta: #a2cda8a0;
+    --pearlAqua: #B7DBCE;
+    --malachite: #3BDF51;
+    --verdeMusgo: rgba(87, 145, 90, 0.95);
+    --racingRed: #F72323;
+    --mintCream: #EDF5EE;
+    --shadow: rgba(0, 0, 0, .2);
+    --corDoFooter: #002310;
+    --corDoFooter2: #001711;
+    --preto: #212529;
+    --backgroundtelassecundarias: #dfe5e0;
+    --brancoTransparente: rgba(255, 255, 255, 0.221);
+    --gradienteBranco: linear-gradient(90deg, transparent, white, transparent);
+    --gradienteBrancoVertical: linear-gradient(0deg, transparent, white, transparent);
+    --gradienteVerde: linear-gradient(to right, #11873F, var(--malachite));
+    --fonteDoTexto: 'Inter', sans-serif;
+}
+
+body {
+    background: var(--backgroundtelassecundarias);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--fonteDoTexto);
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container-login {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cartao-login {
+    width: 1000px;
+    max-width: 95%;
+    height: 560px; /* Define uma altura fixa para o container não esticar para baixo */
+    background: var(--mintCream);
+    border-radius: 25px;
+    padding: 18px;
+    display: flex;
+    gap: 50px;
+    box-shadow: 0 10px 25px var(--shadow);
+    align-items: center; /* Alinha verticalmente sem esticar os filhos */
+}
+
+.imagem-login {
+    width: 440px; /* Trava a largura da área da imagem */
+    height: 100%; /* Ocupa toda a altura disponível do cartão */
+    flex-shrink: 0; /* Impede que o formulário "asfixie" ou encolha a imagem */
+    display: flex;
+}
+
+/* Garante o tamanho exato da imagem lateral esquerda */
+.imagem-login img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+.formulario-login {
+    flex: 1; /* O formulário pega o restante do espaço de forma flexível, mas sem empurrar a imagem */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 20px 20px 0; /* Um leve ajuste no padding da direita */
+}
+
+.logo-pequena {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 5px;
+    position: relative;
+    width: 100%;
+}
+
+/* Protege o tamanho da logo para não estourar na tela */
+.logo-pequena img.logo, 
+.logo-pequena img:not(.setinha) {
+    width: 35px !important;
+    height: 35px !important;
+    object-fit: contain;
+}
+
+.logo-pequena span {
+    font-size: 15px;
+    font-weight: 700;
+    color: #000000 !important;
+}
+
+.setinha {
+    position: absolute;
+    left: 0;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+.formulario-login h2 {
+    color: var(--preto);
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+form {
+    width: 100%;
+}
+
+.grupo-campo {
+    margin-bottom: 25px;
+    width: 100%;
+    position: relative;
+}
+
+.grupo-campo label {
+    color: var(--preto);
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.grupo-campo input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--shadow);
+    outline: none;
+    padding: 10px 0;
+    background: transparent;
+}
+
+.grupo-campo input::placeholder {
+    color: var(--shadow);
+}
+
+.row-campos {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.row-campos .grupo-campo:nth-child(1) {
+    flex: 3;
+}
+.row-campos .grupo-campo:nth-child(2) {
+    flex: 1;
+}
+
+.campo-senha {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.btn-olho {
+    position: absolute;
+    right: 5px;
+    bottom: 10px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.btn-olho img {
+    width: 22px;
+    height: 22px;
+}
+
+.opcoes-login {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0 30px;
+}
+
+.lembrar-login {
+    color: var(--preto);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+}
+
+.lembrar-login input {
+    width: auto;
+}
+
+.esqueci-senha {
+    font-size: 13px;
+    text-decoration: none;
+    color: var(--preto);
+}
+
+.esqueci-senha:hover {
+    color: var(--jadeGreen);
+}
+
+.botao-login {
+    width: 100%;
+    border: none;
+    border-radius: 30px;
+    padding: 12px;
+    color: var(--backgroundtelassecundarias);
+    font-weight: bold;
+    background: var(--gradienteVerde);
+    margin-top: 15px;
+    transition: .3s;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.botao-login:hover {
+    transform: translateY(-2px);
+}
+
+.link-cadastro {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.link-cadastro a {
+    color: var(--darkEmerald);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Remove o olhinho nativo do Microsoft Edge / Chromium */
+input::-ms-reveal,
+input::-ms-clear {
+    display: none;
+}
+
+@media (max-width: 760px) {
+    body {
+        min-height: 100dvh;
+        padding: 16px;
+        align-items: flex-start;
+    }
+
+    .container-login { min-height: calc(100dvh - 32px); }
+
+    .cartao-login {
+        width: 100%;
+        max-width: 520px;
+        height: auto;
+        min-height: 0;
+        padding: clamp(18px, 6vw, 28px);
+        border-radius: 20px;
+    }
+
+    .imagem-login { display: none; }
+
+    .formulario-login {
+        width: 100%;
+        height: auto;
+        padding: 0;
+    }
+}
+
+@media (max-width: 420px) {
+    body { padding: 10px; }
+    .container-login { min-height: calc(100dvh - 20px); }
+    .cartao-login { padding: 22px 18px; }
+    .formulario-login h2 { margin-bottom: 24px; font-size: 22px; }
+    .grupo-campo { margin-bottom: 20px; }
+    .opcoes-login { align-items: flex-start; flex-direction: column; gap: 12px; }
+}

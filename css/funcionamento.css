@@ -1,0 +1,156 @@
+.como-funciona{
+    background-image: url("../img/fundo-comofunciona.png");
+    background-size: 100% 102.5%;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    padding: 0 100px 60px 100px;
+    padding-bottom: 10%;
+    position: relative;
+    z-index: 2;
+}
+.intro-como-funciona{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-block: 4rem;
+}
+.intro-como-funciona h6{
+    padding: 10px 40px;
+    position: relative;
+    border-radius: 40px;
+    margin-bottom: 2rem;
+}
+.como-funciona-cards{
+    display: flex;
+    justify-content: space-between;
+}
+.como-funciona-cards .card{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--brancoTransparente);
+    color: var(--mintCream);
+    width: 25rem;
+    height: 32rem;
+}
+/* Gradiente na ESQUERDA */
+.como-funciona-cards .card::before {
+    content: "";
+    position: absolute;
+    top: 1%;
+    bottom: 1%; /* Estica a linha de cima até embaixo */
+    left: 0;   /* Posiciona no canto esquerdo */
+    width: 2px; /* Define a espessura da linha vertical */
+    background: var(--gradienteBrancoVertical);
+}
+
+/* Gradiente na DIREITA */
+.como-funciona-cards .card::after {
+    content: "";
+    position: absolute;
+    top: 1%;
+    bottom: 1%; /* Estica a linha de cima até embaixo */
+    right: 0;  /* Posiciona no canto direito */
+    width: 2px; /* Define a espessura da linha vertical */
+    background: var(--gradienteBrancoVertical);
+}
+.funciona-cards-texto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.funciona-cards-texto .descricao{
+    margin-inline: 20px;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+.funciona-cards-texto h4{
+    padding-top: 2rem;
+}
+.container-mapa{
+    background-color: #edf5ee;
+    width: 275em;
+    height: 42.5rem;
+    border-radius: 20px;
+}
+.ecopontos{
+    display: flex;
+    padding-block: 5rem;
+}
+.ecopontos-descricao{
+    margin-left: 2rem;
+    p{
+        font-size: 14px;
+    }
+    h1{
+        font-size: 50px;
+    }
+}
+.item-legenda{
+    align-items: center;
+    font-size: 14px;
+    h3{
+        font-size: 20px;
+    }
+    div{
+        margin-left: 1rem;
+    }
+    
+}
+.imagem-legenda{
+        padding: 1.5rem;
+        background-color: var(--brancoTransparente);
+        border-radius: 20px;
+        position: relative;
+    }
+.descricao-legenda{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+}
+strong{
+    color: var(--malachite);
+}
+    
+.imagem-legenda::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradienteBranco);
+}
+
+.imagem-legenda::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradienteBranco);
+}
+
+@media (max-width: 1100px) {
+    .como-funciona { padding-inline: clamp(24px, 6vw, 64px); }
+    .como-funciona-cards { justify-content: center; flex-wrap: wrap; gap: 24px; }
+    .como-funciona-cards .card { width: min(100%, 25rem); }
+    .container-mapa { width: min(100%, 640px); }
+    .ecopontos { align-items: center; flex-direction: column; gap: 36px; }
+    .ecopontos-descricao { width: min(100%, 640px); margin-left: 0; }
+}
+
+@media (max-width: 600px) {
+    .como-funciona { padding: 0 16px 70px; background-size: cover; }
+    .intro-como-funciona { padding-block: 3rem; text-align: center; }
+    .intro-como-funciona h6 { padding-inline: 24px; }
+    .como-funciona-cards .card { height: auto; min-height: 30rem; }
+    .container-mapa { height: 28rem; }
+    .ecopontos { padding-block: 3rem; }
+    .ecopontos-descricao h1 { font-size: clamp(34px, 11vw, 50px); }
+    .imagem-legenda { padding: 1rem; }
+}
